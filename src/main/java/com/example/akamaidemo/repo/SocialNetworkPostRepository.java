@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Qualifier("posts")
+@Qualifier("socialPost")
 @Repository
 public interface SocialNetworkPostRepository extends JpaRepository<SocialNetworkPost, Long> {
-	List<SocialNetworkPost> findTopTenByOrder();
+
 }

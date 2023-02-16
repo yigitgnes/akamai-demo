@@ -7,6 +7,7 @@ import com.example.akamaidemo.service.SocialNetworkPostService;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +17,15 @@ import java.util.List;
 @Service
 public class SocialNetworkPostServiceImpl implements SocialNetworkPostService {
 
+	@Autowired
 	private final ModelMapper modelMapper;
 
+	@Autowired
 	private final SocialNetworkPostRepository postRepository;
 
 	private static final Logger logger = LoggerFactory.getLogger(SocialNetworkPostServiceImpl.class);
 
-	public SocialNetworkPostServiceImpl(@Qualifier("posts") SocialNetworkPostRepository postRepository, ModelMapper modelMapper) {
+	public SocialNetworkPostServiceImpl(@Qualifier("socialPost") SocialNetworkPostRepository postRepository, ModelMapper modelMapper) {
 		this.modelMapper = modelMapper;
 		this.postRepository = postRepository;
 	}
@@ -67,8 +70,4 @@ public class SocialNetworkPostServiceImpl implements SocialNetworkPostService {
 		return true;
 	}
 
-	@Override
-	public List<SocialNetworkPost> findTopTenByOrder() {
-		return postRepository.findTopTenByOrder();
-	}
 }

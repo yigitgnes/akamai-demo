@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,14 +25,19 @@ public class SocialNetworkPost {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 
+	@Column(name = "post_date")
 	private Date postDate;
 
+	@Column(name = "author", length = 200)
 	private String author;
 
+	@Column(name = "content")
 	private String content;
 
+	@Column(name = "view_count")
 	private Integer viewCount;
 
 }

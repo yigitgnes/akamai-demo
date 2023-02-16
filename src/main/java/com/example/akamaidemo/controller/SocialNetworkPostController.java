@@ -20,10 +20,10 @@ import java.util.List;
 @RequestMapping(ApiPaths.PostsCtrl.CTRL)
 public class SocialNetworkPostController {
 
+	@Autowired
 	private final SocialNetworkPostServiceImpl postService;
 
-
-	public SocialNetworkPostController(SocialNetworkPostServiceImpl postService, ModelMapper modelMapper) {
+	public SocialNetworkPostController(SocialNetworkPostServiceImpl postService) {
 		this.postService = postService;
 	}
 
