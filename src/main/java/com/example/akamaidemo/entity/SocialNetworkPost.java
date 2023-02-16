@@ -1,6 +1,7 @@
 package com.example.akamaidemo.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,10 +16,11 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "posts")
+@Table(name = "social_network")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 @EqualsAndHashCode
 public class SocialNetworkPost {
@@ -34,7 +36,7 @@ public class SocialNetworkPost {
 	@Column(name = "author", length = 200)
 	private String author;
 
-	@Column(name = "content")
+	@Column(name = "content", nullable = false)
 	private String content;
 
 	@Column(name = "view_count")

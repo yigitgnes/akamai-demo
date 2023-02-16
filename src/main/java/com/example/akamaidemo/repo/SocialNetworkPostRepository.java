@@ -10,5 +10,5 @@ import java.util.List;
 @Qualifier("socialPost")
 @Repository
 public interface SocialNetworkPostRepository extends JpaRepository<SocialNetworkPost, Long> {
-
+	List<SocialNetworkPost> findTop10ByOrderByViewCountDescPostDateAsc();
 }
