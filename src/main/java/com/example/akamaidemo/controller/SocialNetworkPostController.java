@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -38,9 +40,8 @@ public class SocialNetworkPostController {
 		return ResponseEntity.ok(socialNetworkPostDto);
 	}
 
-	@PostMapping("/posts")
-	public ResponseEntity<SocialNetworkPostDto> createPost(@RequestBody SocialNetworkPostDto post) {
-		SocialNetworkPostDto socialNetworkPostDto = postService.save(post);
+	@PostMapping(value = "/create")
+	public ResponseEntity<SocialNetworkPostDto> createSocialNetworkPost(@Valid @RequestBody SocialNetworkPostDto post) {
 		return ResponseEntity.ok(postService.save(post));
 	}
 
