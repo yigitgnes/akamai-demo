@@ -17,8 +17,8 @@ This project provides REST API endpoints for managing social network posts. The 
 * GET api/posts/{id}: Get post by ID
 * GET api/posts/top10: Get Top 10 Viewed Content
 * POST api/posts: Create a new post
-* PUT api/posts/{id}: Update an existing post by ID
-* DELETE api/posts/{id}: Delete an existing post by ID
+* PUT api/posts/update/{id}: Update an existing post by ID
+* DELETE api/posts/delete/{id}: Delete an existing post by ID
 
 #### Database
 
